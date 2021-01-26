@@ -31,6 +31,7 @@ do
 
 '1' {
 cls
+Write-Host "Create honeypot active directory user."
 $username = Read-Host -Prompt 'Active Directory Username'
 $desc = Read-Host -Prompt 'User Description'
 if ($username) {
@@ -57,7 +58,7 @@ else
 
 '2' {
                 cls
-               
+Write-Host "Create honeypot active directory computer name."               
 Import-Module ActiveDirectory
  $computername = Read-Host -Prompt 'Active Directory Computer Name'
  $computerdesc = Read-Host -Prompt 'Active Directory Computer Name Description'
@@ -73,11 +74,13 @@ else
   write-host "Try creating computer name again!"
 }
 
+
            }  
            
 
 '3' {
-cls             
+cls    
+Write-Host " honeypot inactive domain administrator."         
 $username = Read-Host -Prompt 'Active Directory username to add domain administrator group. (inactive)'
 $desc = Read-Host -Prompt 'Domain Admin Description'
 if ($username) {
@@ -102,6 +105,7 @@ else
            
 '4' {
 cls
+Write-Host "Create honeypot  DNS record"   
 $dnsname = Read-Host -Prompt 'DNS Name'
 $IPAdress = Read-Host -Prompt 'IP Adress'
 $zonename = Read-Host -Prompt 'Zonename (for exp: test.local or test.com'
@@ -122,7 +126,8 @@ else
 
            
 '5' {
-cls 
+cls
+Write-Host "Create honeypot SPN record." 
 $computername = Read-Host -Prompt 'Computer Name'
 $username = Read-Host -Prompt 'Username'
 $domainname = Read-Host -Prompt 'Domain name without suffix'
@@ -143,6 +148,8 @@ else
      
            }    
            
+           
+                  
                       
            'q' {
                 return
