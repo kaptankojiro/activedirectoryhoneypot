@@ -1,11 +1,11 @@
-clear
 # Use at your own risk!
 # Try it in your active directory lab setup first!
 # This script is inspired from https://github.com/JavelinNetworks/HoneypotBuster/blob/master/Invoke-HoneypotBuster.ps1
 
 Import-Module ActiveDirectory
-//Set-ADUser -Identity fatih -ServicePrincipalNames @{Add='HTTP/webserver','HTTP/SomeAlias'}
 
+
+cls
 function Show-Menu
 {
      param (
@@ -36,6 +36,8 @@ $username = Read-Host -Prompt 'Active Directory Username'
 $desc = Read-Host -Prompt 'User Description'
 if ($username) {
 
+
+Import-Module ActiveDirectory
 $aduser = New-ADUser -Name $username -AccountPassword(Read-Host  -AsSecureString "AccountPassword")  -Description $desc  -PassThru | Enable-ADAccount
 
 if($?)
